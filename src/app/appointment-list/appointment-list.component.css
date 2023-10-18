@@ -1,0 +1,10 @@
+table {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.refresh-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+}

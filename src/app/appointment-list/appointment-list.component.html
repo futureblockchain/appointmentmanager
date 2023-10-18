@@ -1,0 +1,30 @@
+<button (click)="fetchAppointments()">Refresh</button>
+
+<div *ngIf="appointments.length; else noAppointments">
+    <!-- Display table or list for appointments -->
+    <!-- Sample table format -->
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Client Name</th>
+                <th>Doctor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointments">
+                <td>{{ appointment.title }}</td>
+                <td>{{ appointment.date | date: 'shortDate' }}</td>
+                <td>{{ appointment.time }}</td>
+                <td>{{ appointment.clientName }}</td>
+                <td>{{ appointment.responsibleDoctor }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #noAppointments>
+    <p>No appointments scheduled.</p>
+</ng-template>
